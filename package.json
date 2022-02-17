@@ -1,5 +1,5 @@
 {
-  "name": "@newt-inc/gatsby-source-newt-test",
+  "name": "gatsby-source-newt",
   "version": "0.0.1",
   "description": "Gatsby source plugin for building websites using Newt as a data source",
   "main": "gatsby-node.js",
