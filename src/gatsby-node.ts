@@ -9,7 +9,7 @@ exports.sourceNodes = async (
   const { createNode } = actions;
 
   const {
-    projectUid,
+    spaceUid,
     appUid,
     modelUid,
     token,
@@ -18,7 +18,7 @@ exports.sourceNodes = async (
   } = pluginOptions;
 
   const axiosInstance = axios.create({
-    baseURL: `https://${projectUid}.${apiType}.newt.so/v1`,
+    baseURL: `https://${spaceUid}.${apiType}.newt.so/v1`,
     headers: { Authorization: `Bearer ${token}` },
   });
 
@@ -37,7 +37,7 @@ exports.sourceNodes = async (
     createNode({
       ...item,
       id: createNodeId(
-        `${projectUid}-${appUid}-${modelUid}-${apiType}-${item._id}`
+        `${spaceUid}-${appUid}-${modelUid}-${apiType}-${item._id}`
       ),
       parent: null,
       children: [],

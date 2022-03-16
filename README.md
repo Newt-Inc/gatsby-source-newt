@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-newt',
       options: {
-        projectUid: 'YOUR_PROJECT_UID',
+        spaceUid: 'YOUR_SPACE_UID',
         appUid: 'YOUR_APP_UID',
         modelUid: 'YOUR_MODEL_UID',
         token: 'YOUR_CDN_API_TOKEN',
@@ -39,7 +39,7 @@ module.exports = {
 
 | Name | Default | Description |
 | :--- | :--- | :--- |
-| `projectUid` | | **Required.** Your project uid. |
+| `spaceUid` | | **Required.** Your space uid. |
 | `appUid` | | **Required.** Your app uid. |
 | `modelUid` | | **Required.** Your model uid. |
 | `token` | | **Required.** Your Newt CDN API token or Newt API token. |
