@@ -1,12 +1,12 @@
-import { PluginOptions, SourceNodesArgs } from 'gatsby';
-import axios from 'axios';
-import camelCase from 'camelcase';
+import { PluginOptions, SourceNodesArgs } from 'gatsby'
+import axios from 'axios'
+import camelCase from 'camelcase'
 
 exports.sourceNodes = async (
   { actions, createContentDigest, createNodeId }: SourceNodesArgs,
   pluginOptions: PluginOptions
 ) => {
-  const { createNode } = actions;
+  const { createNode } = actions
 
   const {
     spaceUid,
@@ -15,22 +15,22 @@ exports.sourceNodes = async (
     token,
     apiType = 'cdn',
     query,
-  } = pluginOptions;
+  } = pluginOptions
 
   const axiosInstance = axios.create({
     baseURL: `https://${spaceUid}.${apiType}.newt.so/v1`,
     headers: { Authorization: `Bearer ${token}` },
-  });
+  })
 
-  let url = `/${appUid}/${modelUid}`;
+  let url = `/${appUid}/${modelUid}`
   if (query) {
-    url = url + '?' + query;
+    url = url + '?' + query
   }
-  const { data } = await axiosInstance.get(url);
+  const { data } = await axiosInstance.get(url)
 
   const type = camelCase(['Newt', modelUid + ''], {
     pascalCase: true,
-  });
+  })
 
   // eslint-disable-next-line
   data.items.forEach((item: any) =>
@@ -47,6 +47,6 @@ exports.sourceNodes = async (
         contentDigest: createContentDigest(item),
       },
     })
-  );
-  return;
-};
+  )
+  return
+}
