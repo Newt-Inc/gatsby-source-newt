@@ -25,10 +25,39 @@ module.exports = {
       resolve: 'gatsby-source-newt',
       options: {
         spaceUid: 'YOUR_SPACE_UID',
+        token: 'YOUR_API_TOKEN',
         appUid: 'YOUR_APP_UID',
-        modelUid: 'YOUR_MODEL_UID',
-        token: 'YOUR_CDN_API_TOKEN',
-        apiType: 'cdn',  // You can specify "cdn" or "api".
+        models: [{
+          uid: 'YOUR_MODEL_UID_1',
+        }],
+      },
+    },
+  ],
+};
+
+// If you want to source from multiple spaces or multiple apps, add another configuration.
+module.exports = {
+  plugins: [
+    {
+      resolve: 'gatsby-source-newt',
+      options: {
+        spaceUid: 'YOUR_SPACE_UID_1',
+        token: 'YOUR_CDN_API_TOKEN_1',
+        appUid: 'YOUR_APP_UID_1',
+        models: [{
+          uid: 'YOUR_MODEL_UID_1',
+        }],
+      },
+    },
+    {
+      resolve: 'gatsby-source-newt',
+      options: {
+        spaceUid: 'YOUR_SPACE_UID_2',
+        token: 'YOUR_CDN_API_TOKEN_2',
+        appUid: 'YOUR_APP_UID_2',
+        models: [{
+          uid: 'YOUR_MODEL_UID_2',
+        }],
       },
     },
   ],
@@ -37,13 +66,87 @@ module.exports = {
 
 #### Options
 
-| Name | Default | Description |
-| :--- | :--- | :--- |
-| `spaceUid` | | **Required.** Your space uid. |
-| `appUid` | | **Required.** Your app uid. |
-| `modelUid` | | **Required.** Your model uid. |
-| `token` | | **Required.** Your Newt CDN API token or Newt API token. |
-| `apiType` | `cdn` | You can specify `cdn` or `api`. Please specify `cdn` to send a request to the Newt CDN API, or `api` to send a request to the Newt API. |
+```js
+{
+  /**
+   * `spaceUid` is your space uid.
+   *
+   * Required
+   * Type: String
+   **/
+  spaceUid: 'YOUR_SPACE_UID',
+
+  /**
+   * `token` is an authentication token used for the API.
+   * If you use the CDN API, enter the CDN API token; if you use the Newt API, enter the Newt API token.
+   *
+   * Required
+   * Type: String
+   **/
+  token: 'YOUR_API_TOKEN',
+
+  /**
+   * `appUid` is your app uid.
+   *
+   * Required
+   * Type: String
+   **/
+  appUid: 'blog',
+
+  /**
+   * `models` is an array of information about the models you want to source.
+   *
+   * Required.
+   * Type: Array
+   **/
+  models: [{
+    /**
+     * `uid` is your model uid.
+     *
+     * Required
+     * Type: String
+     **/
+    uid: 'article',
+
+    /**
+     * `type` is used to name the type in GraphQL.
+     * If you specify 'post' as a type, then the type of GraphQL will be 'newtPost' and 'allNewtPost'.
+     *
+     * Optional
+     * Type: String
+     * Default: uid value
+     **/
+    type: 'post',
+
+    /**
+     * `query` specifies the condition of the content to be fetched.
+     * See below for details on available queries.
+     * https://github.com/Newt-Inc/newt-client-js#query-fields
+     *
+     * Optional
+     * Type: Object
+     **/
+    query: {
+      or: [
+        { title: { match: 'update' } },
+        { title: { match: 'アップデート' } }
+      ],
+      body: { fmt: 'text' },
+      limit: 10
+    },
+  }],
+
+  /**
+   * `apiType` specifies the API to be used.
+   * If you use the CDN API, enter `cdn`; if you use the Newt API, enter `api`.
+   *
+   * Optional
+   * Type: String
+   * Default: `cdn`
+   **/
+  apiType: 'cdn',
+}
+```
 
 ### gatsby-node.js
 
