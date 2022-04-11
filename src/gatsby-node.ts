@@ -6,6 +6,7 @@ import {
 } from 'gatsby'
 import { createClient, GetContentsQuery } from 'newt-client-js'
 import camelCase from 'camelcase'
+import { fetchAll } from './fetch'
 
 interface PluginConfig extends PluginOptions {
   spaceUid: string
@@ -68,11 +69,8 @@ export const sourceNodes = async (
 
   await Promise.all(
     models.map(async (model) => {
-      const { items } = await client.getContents({
-        appUid,
-        modelUid: model.uid,
-        query: model.query,
-      })
+      const query = model.query ? model.query : {}
+      const allItems = await fetchAll(client, appUid, model.uid, query)
 
       const type = model.type || model.uid
       const internalType = camelCase(['Newt', type], {
@@ -80,7 +78,7 @@ export const sourceNodes = async (
       })
 
       // eslint-disable-next-line
-      items.forEach((item: any) =>
+      allItems.forEach((item: any) =>
         createNode({
           ...item,
           id: createNodeId(
