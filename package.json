@@ -37,6 +37,6 @@
   },
   "dependencies": {
     "camelcase": "^6.3.0",
-    "newt-client-js": "^3.0.1"
+    "newt-client-js": "^3.0.2"
   }
 }

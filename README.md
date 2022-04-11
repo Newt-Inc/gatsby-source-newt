@@ -132,7 +132,6 @@ module.exports = {
         { title: { match: 'アップデート' } }
       ],
       body: { fmt: 'text' },
-      limit: 10
     },
   }],
 
