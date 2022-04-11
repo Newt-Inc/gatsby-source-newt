@@ -6636,10 +6636,10 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-newt-client-js@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/newt-client-js/-/newt-client-js-3.0.0.tgz#03351d4b4346c9b1e9e9c981022f78c6acf17dcf"
-  integrity sha512-FQnm1rNd1GQ5lTT+YO1GBvK/RLswLUZhmn8llJSmmUS+9jFvdt8MsvOmlHE8/4jjxJh6TCfngUcYGhkgaeJFvg==
+newt-client-js@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/newt-client-js/-/newt-client-js-3.0.1.tgz#6ad8e8890d6f6a3e6fc3bcfb3a1dcfd5fe8d240d"
+  integrity sha512-FWL+vb9ciIDI3sp5vtmvN1wIdNfaClF9TXOU+XXh507vjIgcuI4sU9l97ZElDZJBMjjC3yD3pJ15Q1wSQ9t3AA==
   dependencies:
     axios "^0.26.1"
     axios-retry "^3.2.4"
