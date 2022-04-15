@@ -7,17 +7,30 @@ export const fetchAll = async (
   query: GetContentsQuery
 ) => {
   const MAX_LIMIT = 1000
-  query.limit = MAX_LIMIT
+  const limit = query.limit
 
-  const { total, items } = await client.getContents({
+  if (limit && limit <= MAX_LIMIT) {
+    const { items } = await client.getContents({
+      appUid,
+      modelUid,
+      query,
+    })
+    return items
+  }
+
+  query.limit = MAX_LIMIT
+  const { skip, total, items } = await client.getContents({
     appUid,
     modelUid,
     query,
   })
   let allItems = items
-  query.skip = MAX_LIMIT
 
-  while (query.skip && query.skip < total) {
+  let allCount = total
+  if (limit && skip + limit < total) allCount = skip + limit
+  query.skip = skip + MAX_LIMIT
+
+  while (query.skip < allCount) {
     const { items } = await client.getContents({
       appUid,
       modelUid,
