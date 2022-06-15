@@ -177,7 +177,7 @@ exports.createPages = async ({graphql, actions}) => {
       path: edge.node.slug,
       component: path.resolve('./src/templates/article.js'),
       context: {
-        _id_: edge.node._id
+        _id: edge.node._id
       },
     })
   })
