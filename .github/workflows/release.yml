@@ -18,6 +18,6 @@ jobs:
       - run: yarn lint:eslint
       - run: yarn lint:prettier
       - run: yarn build
-      - run: yarn publish --non-interactive
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
