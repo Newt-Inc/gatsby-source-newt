@@ -3043,12 +3043,12 @@ axios@^0.21.1:
   dependencies:
     follow-redirects "^1.14.0"
 
-axios@^1.6.0:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.6.2.tgz#de67d42c755b571d3e698df1b6504cde9b0ee9f2"
-  integrity sha512-7i24Ri4pmDRfJTR7LDBhsOTtcm+9kjX5WiY1X3wIisx6G9So3pfMkEiU7emUBe46oceVImccTEM3k6C5dbVW8A==
+axios@^1.7.4:
+  version "1.7.4"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.7.4.tgz#4c8ded1b43683c8dd362973c393f3ede24052aa2"
+  integrity sha512-DukmaFRnY6AzAALSH4J2M3k6PkaC+MfaAGdEERRWcC9q3/TWQwLpHR8ZRLKTdQ3aBDL64EdluRDjJqKw+BPZEw==
   dependencies:
-    follow-redirects "^1.15.0"
+    follow-redirects "^1.15.6"
     form-data "^4.0.0"
     proxy-from-env "^1.1.0"
 
@@ -5350,7 +5350,7 @@ flatted@^3.1.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-3.2.5.tgz#76c8584f4fc843db64702a6bd04ab7a8bd666da3"
   integrity sha512-WIWGi2L3DyTUvUrwRKgGi9TwxQMUEqPOPQBVi71R96jZXJdFskXEmf54BoZaS1kknGODoIGASGEzBUYdyMCBJg==
 
-follow-redirects@^1.14.0, follow-redirects@^1.15.0:
+follow-redirects@^1.14.0, follow-redirects@^1.15.6:
   version "1.15.6"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.15.6.tgz#7f815c0cda4249c74ff09e95ef97c23b5fd0399b"
   integrity sha512-wWN62YITEaOpSK584EZXJafH1AGpO8RVgElfkuXbTOrPX4fIfOyEpW/CsiNd8JdYrAoOvafRTOEnvsO++qCqFA==
@@ -7481,12 +7481,12 @@ neo-async@^2.6.1, neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-newt-client-js@^3.2.8:
-  version "3.2.8"
-  resolved "https://registry.yarnpkg.com/newt-client-js/-/newt-client-js-3.2.8.tgz#7c6f021ee57c67c510582e80829c102b3f7ce8b4"
-  integrity sha512-Cd4Dd9NXlPo8iWJc8rghhdm7pfkjyUhCBM+Xiog8ZOoArk0w4rx8iPnI4HV66dfIu6u1BmuHo6hSrxqSOx6HIA==
+newt-client-js@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/newt-client-js/-/newt-client-js-3.3.4.tgz#7b00f4e4c4f06179e81f560069ad3201e57bc05f"
+  integrity sha512-Fr0s258jmxfcqRlB7skwsTjLdkUTm8spvdJ5zixsjyf81UB/f1VlKxZZNCmNFNB5bxlj16zu8HNN7zG0azLU/Q==
   dependencies:
-    axios "^1.6.0"
+    axios "^1.7.4"
     axios-retry "^3.2.4"
     qs "^6.10.1"
 
