@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "camelcase": "^6.3.0",
-    "newt-client-js": "^3.2.8"
+    "newt-client-js": "^3.3.4"
   },
   "devDependencies": {
     "@types/node": "20.12.7",
